@@ -6,7 +6,7 @@ var config = {
 		default: 'Arcade',
 		arcade: {
 			gravity: {
-				x: -50
+				x: -2
 			},
 			debug: false
 		}
@@ -25,6 +25,9 @@ function preload() {
 	this.load.image('sheet1', 'img/sheetinicio.png')
 	this.load.image('sheet2', 'img/sheetpadrao.png')
 	this.load.image('bola', 'img/bola.png')
+	this.load.image('bolinha','img/bolinha.png')
+	this.load.image('bolinha1','img/bolinhaReta.png')
+
 }
 
 function create() {
@@ -39,7 +42,7 @@ function create() {
 	this.add.image(400, 300, 'player')
 
 	// bolas
-	this.physics.add.image(2200, 680, 'bola')
+	this.physics.add.image(1565, 213, 'bolinha1')
 
 	// quadrado.setVelocityX(-250);
 
