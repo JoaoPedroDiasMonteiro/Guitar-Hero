@@ -42,7 +42,7 @@ function create() {
 	this.add.image(400, 300, 'player')
 
 	// bolas
-	this.physics.add.image(1565, 213, 'bolinha1')
+	this.physics.add.image(1530, 195, 'bolinha1')
 
 	// quadrado.setVelocityX(-250);
 
