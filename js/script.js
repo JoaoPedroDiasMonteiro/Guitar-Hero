@@ -27,7 +27,10 @@ document.addEventListener('keydown', function () {
 document.addEventListener('keyup', function () {
 	key = 0
 })
-
+// para colocar bolinhas
+let fim = 21980
+// para colocar sheets
+let fimsheet = 29900
 function preload() {
 	this.load.image('player', 'img/player.png')
 	this.load.image('sheet1', 'img/sheetinicio.png')
@@ -60,6 +63,40 @@ function create() {
 		sheets.create(9100, 300, `sheet2`)
 		sheets.create(9900, 300, `sheet2`)
 		sheets.create(10700, 300, `sheet2`)
+		// espaço em branco V
+		sheets.create(11500, 300, `sheet2`)
+		sheets.create(12300, 300, `sheet2`)
+		// página sheet V
+		sheets.create(13100, 300, `sheet2`)
+		sheets.create(13900, 300, `sheet2`)
+		sheets.create(14700, 300, `sheet2`)
+		sheets.create(15500, 300, `sheet2`)
+		sheets.create(16300, 300, `sheet2`)
+		sheets.create(17100, 300, `sheet2`)
+		sheets.create(17900, 300, `sheet2`)
+		sheets.create(18700, 300, `sheet2`)
+		sheets.create(19500, 300, `sheet2`)
+		sheets.create(20300, 300, `sheet2`)
+		sheets.create(21100, 300, `sheet2`)
+		//
+		sheets.create(21900, 300, `sheet2`)
+		sheets.create(22700, 300, `sheet2`)
+		sheets.create(23500, 300, `sheet2`)
+		sheets.create(24300, 300, `sheet2`)
+		sheets.create(25100, 300, `sheet2`)
+		sheets.create(25900, 300, `sheet2`)
+		sheets.create(26700, 300, `sheet2`)
+		sheets.create(27500, 300, `sheet2`)
+		sheets.create(28300, 300, `sheet2`)
+		sheets.create(29100, 300, `sheet2`)
+		sheets.create(29900, 300, `sheet2`), fimsheet += 800
+		//
+		sheets.create(fimsheet, 300, `sheet2`), fimsheet += 800
+		sheets.create(fimsheet, 300, `sheet2`), fimsheet += 800
+		sheets.create(fimsheet, 300, `sheet2`), fimsheet += 800
+		sheets.create(fimsheet, 300, `sheet2`), fimsheet += 800
+		sheets.create(fimsheet, 300, `sheet2`), fimsheet += 800
+
 		// config
 		sheets.setVelocityX(-267);
 
@@ -131,6 +168,126 @@ function create() {
 		re.create(10380, 250, 'bolinha1')
 		re.create(10580, 250, 'bolinha1')
 		dó.create(10780, 268, 'bolinha1')
+
+		//
+		// part 2 vruuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuum
+		//
+
+		dó.create(12780, 268, 'bolinha1')
+		dó.create(12980, 268, 'bolinha1')
+		sol.create(13180, 195, 'bolinha1')
+		sol.create(13380, 195, 'bolinha1')
+		//
+		la.create(13580, 176, 'bolinha1')
+		la.create(13780, 176, 'bolinha1')
+		sol.create(13980, 195, 'bolinha1')
+		//
+		fa.create(14380, 213, 'bolinha1')
+		fa.create(14580, 213, 'bolinha1')
+		mi.create(14780, 232, 'bolinha1')
+		mi.create(14980, 232, 'bolinha1')
+		//
+		re.create(15180, 250, 'bolinha1')
+		re.create(15380, 250, 'bolinha1')
+		dó.create(15580, 268, 'bolinha1')
+		// segunda linha
+		//
+		sol.create(15980, 195, 'bolinha1')
+		sol.create(16180, 195, 'bolinha1')
+		fa.create(16380, 213, 'bolinha1')
+		fa.create(16580, 213, 'bolinha1')
+		//
+		mi.create(16780, 232, 'bolinha1')
+		mi.create(16980, 232, 'bolinha1')
+		re.create(17180, 250, 'bolinha1')
+		//
+		sol.create(17580, 195, 'bolinha1')
+		sol.create(17780, 195, 'bolinha1')
+		fa.create(17980, 213, 'bolinha1')
+		fa.create(18180, 213, 'bolinha1')
+		//
+		mi.create(18380, 232, 'bolinha1')
+		mi.create(18580, 232, 'bolinha1')
+		re.create(18780, 250, 'bolinha1')
+		// terceira linha
+		//
+		dó.create(19180, 268, 'bolinha1')
+		dó.create(19380, 268, 'bolinha1')
+		sol.create(19580, 195, 'bolinha1')
+		sol.create(19780, 195, 'bolinha1')
+		//
+		la.create(19980, 176, 'bolinha1')
+		la.create(20180, 176, 'bolinha1')
+		sol.create(20380, 195, 'bolinha1')
+		//
+		fa.create(20780, 213, 'bolinha1')
+		fa.create(20980, 213, 'bolinha1')
+		mi.create(21180, 232, 'bolinha1')
+		mi.create(21380, 232, 'bolinha1')
+		//
+		re.create(21580, 250, 'bolinha1')
+		re.create(21780, 250, 'bolinha1')
+		dó.create(21980, 268, 'bolinha1')
+
+		// 
+		// part 3 vruuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuum
+		//
+		fim +=2000
+		dó.create(fim, 268, 'bolinha1'), fim +=200
+		dó.create(fim, 268, 'bolinha1'), fim +=200
+		sol.create(fim, 195, 'bolinha1'), fim +=200
+		sol.create(fim, 195, 'bolinha1'), fim +=200
+		//
+		la.create(fim, 176, 'bolinha1'), fim +=200
+		la.create(fim, 176, 'bolinha1'), fim +=200
+		sol.create(fim, 195, 'bolinha1'), fim +=400
+		//
+		fa.create(fim, 213, 'bolinha1'), fim +=200
+		fa.create(fim, 213, 'bolinha1'), fim +=200
+		mi.create(fim, 232, 'bolinha1'), fim +=200
+		mi.create(fim, 232, 'bolinha1'), fim +=200
+		//
+		re.create(fim, 250, 'bolinha1'), fim +=200
+		re.create(fim, 250, 'bolinha1'), fim +=200
+		dó.create(fim, 268, 'bolinha1'), fim +=400
+		// segunda linha
+		//
+		sol.create(fim, 195, 'bolinha1'), fim +=200
+		sol.create(fim, 195, 'bolinha1'), fim +=200
+		fa.create(fim, 213, 'bolinha1'), fim +=200
+		fa.create(fim, 213, 'bolinha1'), fim +=200
+		//
+		mi.create(fim, 232, 'bolinha1'), fim +=200
+		mi.create(fim, 232, 'bolinha1'), fim +=200
+		re.create(fim, 250, 'bolinha1'), fim +=400
+		//
+		sol.create(fim, 195, 'bolinha1'), fim +=200
+		sol.create(fim, 195, 'bolinha1'), fim +=200
+		fa.create(fim, 213, 'bolinha1'), fim +=200
+		fa.create(fim, 213, 'bolinha1'), fim +=200
+		//
+		mi.create(fim, 232, 'bolinha1'), fim +=200
+		mi.create(fim, 232, 'bolinha1'), fim +=200
+		re.create(fim, 250, 'bolinha1'), fim +=400
+		// terceira linha
+		//
+		dó.create(fim, 268, 'bolinha1'), fim +=200
+		dó.create(fim, 268, 'bolinha1'), fim +=200
+		sol.create(fim, 195, 'bolinha1'), fim +=200
+		sol.create(fim, 195, 'bolinha1'), fim +=200
+		//
+		la.create(fim, 176, 'bolinha1'), fim +=200
+		la.create(fim, 176, 'bolinha1'), fim +=200
+		sol.create(fim, 195, 'bolinha1'), fim +=400
+		//
+		fa.create(fim, 213, 'bolinha1'), fim +=200
+		fa.create(fim, 213, 'bolinha1'), fim +=200
+		mi.create(fim, 232, 'bolinha1'), fim +=200
+		mi.create(fim, 232, 'bolinha1'), fim +=200
+		//
+		re.create(fim, 250, 'bolinha1'), fim +=300
+		re.create(fim, 250, 'bolinha1'), fim +=300
+		dó.create(fim, 268, 'bolinha1'), fim +=400
 
 		//  configs
 		dó.setVelocityX(-267)
