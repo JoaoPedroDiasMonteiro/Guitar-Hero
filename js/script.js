@@ -24,7 +24,6 @@ var game = new Phaser.Game(config);
 let key
 document.addEventListener('keydown', function () {
 	key = event.keyCode
-	console.log(scoreMulti);
 
 })
 document.addEventListener('keyup', function () {
@@ -316,7 +315,6 @@ function create() {
 		// teclas
 		cursors = this.input.keyboard.createCursorKeys();
 
-
 		// interações
 		this.physics.add.overlap(player, dó, multiplicador)
 		this.physics.add.overlap(player, re, multiplicador)
@@ -332,7 +330,7 @@ function create() {
 		this.physics.add.overlap(player, sol, key_T)
 		this.physics.add.overlap(player, la, key_Y)
 
-	}, 780);
+	}, 7800);
 
 }
 
@@ -362,27 +360,22 @@ function key_Q(player, nota) {
 }
 
 function key_W(player, nota) {
-
 	key == 87 ? deletarNota(nota) : scoreMulti = 1
 }
 
 function key_E(player, nota) {
-
 	key == 69 ? deletarNota(nota) : scoreMulti = 1
 }
 
 function key_R(player, nota) {
-
 	key == 82 ? deletarNota(nota) : scoreMulti = 1
 }
 
 function key_T(player, nota) {
-
 	key == 84 ? deletarNota(nota) : scoreMulti = 1
 }
 
 function key_Y(player, nota) {
-
 	key == 89 ? deletarNota(nota) : scoreMulti = 1
 }
 // deixa anotado isso aqui, vai que né
