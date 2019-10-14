@@ -17,12 +17,15 @@ var config = {
 		update: update
 	}
 };
-
+var score = 0;
+var scoreText;
+var scoreMulti = 1
 var game = new Phaser.Game(config);
-
 let key
 document.addEventListener('keydown', function () {
 	key = event.keyCode
+	console.log(scoreMulti);
+
 })
 document.addEventListener('keyup', function () {
 	key = 0
@@ -31,6 +34,7 @@ document.addEventListener('keyup', function () {
 let fim = 21980
 // para colocar sheets
 let fimsheet = 29900
+
 function preload() {
 	this.load.image('player', 'img/player.png')
 	this.load.image('sheet1', 'img/sheetinicio.png')
@@ -45,6 +49,7 @@ function create() {
 
 	var music = this.sound.add('littlestar');
 	music.play();
+
 
 	setTimeout(() => {
 		// sheets
@@ -232,62 +237,62 @@ function create() {
 		// 
 		// part 3 vruuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuum
 		//
-		fim +=2000
-		dó.create(fim, 268, 'bolinha1'), fim +=200
-		dó.create(fim, 268, 'bolinha1'), fim +=200
-		sol.create(fim, 195, 'bolinha1'), fim +=200
-		sol.create(fim, 195, 'bolinha1'), fim +=200
+		fim += 2000
+		dó.create(fim, 268, 'bolinha1'), fim += 200
+		dó.create(fim, 268, 'bolinha1'), fim += 200
+		sol.create(fim, 195, 'bolinha1'), fim += 200
+		sol.create(fim, 195, 'bolinha1'), fim += 200
 		//
-		la.create(fim, 176, 'bolinha1'), fim +=200
-		la.create(fim, 176, 'bolinha1'), fim +=200
-		sol.create(fim, 195, 'bolinha1'), fim +=400
+		la.create(fim, 176, 'bolinha1'), fim += 200
+		la.create(fim, 176, 'bolinha1'), fim += 200
+		sol.create(fim, 195, 'bolinha1'), fim += 400
 		//
-		fa.create(fim, 213, 'bolinha1'), fim +=200
-		fa.create(fim, 213, 'bolinha1'), fim +=200
-		mi.create(fim, 232, 'bolinha1'), fim +=200
-		mi.create(fim, 232, 'bolinha1'), fim +=200
+		fa.create(fim, 213, 'bolinha1'), fim += 200
+		fa.create(fim, 213, 'bolinha1'), fim += 200
+		mi.create(fim, 232, 'bolinha1'), fim += 200
+		mi.create(fim, 232, 'bolinha1'), fim += 200
 		//
-		re.create(fim, 250, 'bolinha1'), fim +=200
-		re.create(fim, 250, 'bolinha1'), fim +=200
-		dó.create(fim, 268, 'bolinha1'), fim +=400
+		re.create(fim, 250, 'bolinha1'), fim += 200
+		re.create(fim, 250, 'bolinha1'), fim += 200
+		dó.create(fim, 268, 'bolinha1'), fim += 400
 		// segunda linha
 		//
-		sol.create(fim, 195, 'bolinha1'), fim +=200
-		sol.create(fim, 195, 'bolinha1'), fim +=200
-		fa.create(fim, 213, 'bolinha1'), fim +=200
-		fa.create(fim, 213, 'bolinha1'), fim +=200
+		sol.create(fim, 195, 'bolinha1'), fim += 200
+		sol.create(fim, 195, 'bolinha1'), fim += 200
+		fa.create(fim, 213, 'bolinha1'), fim += 200
+		fa.create(fim, 213, 'bolinha1'), fim += 200
 		//
-		mi.create(fim, 232, 'bolinha1'), fim +=200
-		mi.create(fim, 232, 'bolinha1'), fim +=200
-		re.create(fim, 250, 'bolinha1'), fim +=400
+		mi.create(fim, 232, 'bolinha1'), fim += 200
+		mi.create(fim, 232, 'bolinha1'), fim += 200
+		re.create(fim, 250, 'bolinha1'), fim += 400
 		//
-		sol.create(fim, 195, 'bolinha1'), fim +=200
-		sol.create(fim, 195, 'bolinha1'), fim +=200
-		fa.create(fim, 213, 'bolinha1'), fim +=200
-		fa.create(fim, 213, 'bolinha1'), fim +=200
+		sol.create(fim, 195, 'bolinha1'), fim += 200
+		sol.create(fim, 195, 'bolinha1'), fim += 200
+		fa.create(fim, 213, 'bolinha1'), fim += 200
+		fa.create(fim, 213, 'bolinha1'), fim += 200
 		//
-		mi.create(fim, 232, 'bolinha1'), fim +=200
-		mi.create(fim, 232, 'bolinha1'), fim +=200
-		re.create(fim, 250, 'bolinha1'), fim +=400
+		mi.create(fim, 232, 'bolinha1'), fim += 200
+		mi.create(fim, 232, 'bolinha1'), fim += 200
+		re.create(fim, 250, 'bolinha1'), fim += 400
 		// terceira linha
 		//
-		dó.create(fim, 268, 'bolinha1'), fim +=200
-		dó.create(fim, 268, 'bolinha1'), fim +=200
-		sol.create(fim, 195, 'bolinha1'), fim +=200
-		sol.create(fim, 195, 'bolinha1'), fim +=200
+		dó.create(fim, 268, 'bolinha1'), fim += 200
+		dó.create(fim, 268, 'bolinha1'), fim += 200
+		sol.create(fim, 195, 'bolinha1'), fim += 200
+		sol.create(fim, 195, 'bolinha1'), fim += 200
 		//
-		la.create(fim, 176, 'bolinha1'), fim +=200
-		la.create(fim, 176, 'bolinha1'), fim +=200
-		sol.create(fim, 195, 'bolinha1'), fim +=400
+		la.create(fim, 176, 'bolinha1'), fim += 200
+		la.create(fim, 176, 'bolinha1'), fim += 200
+		sol.create(fim, 195, 'bolinha1'), fim += 400
 		//
-		fa.create(fim, 213, 'bolinha1'), fim +=200
-		fa.create(fim, 213, 'bolinha1'), fim +=200
-		mi.create(fim, 232, 'bolinha1'), fim +=200
-		mi.create(fim, 232, 'bolinha1'), fim +=200
+		fa.create(fim, 213, 'bolinha1'), fim += 200
+		fa.create(fim, 213, 'bolinha1'), fim += 200
+		mi.create(fim, 232, 'bolinha1'), fim += 200
+		mi.create(fim, 232, 'bolinha1'), fim += 200
 		//
-		re.create(fim, 250, 'bolinha1'), fim +=300
-		re.create(fim, 250, 'bolinha1'), fim +=300
-		dó.create(fim, 268, 'bolinha1'), fim +=400
+		re.create(fim, 250, 'bolinha1'), fim += 300
+		re.create(fim, 250, 'bolinha1'), fim += 300
+		dó.create(fim, 268, 'bolinha1'), fim += 400
 
 		//  configs
 		dó.setVelocityX(-267)
@@ -297,10 +302,29 @@ function create() {
 		mi.setVelocityX(-267)
 		re.setVelocityX(-267)
 
+
+		// pontuação
+		scoreText = this.add.text(16, 16, 'score: 0', {
+			fontSize: '32px',
+			fill: '#000'
+		});
+		multiText = this.add.text(16, 38, 'score: 0', {
+			fontSize: '32px',
+			fill: '#000'
+		});
+
 		// teclas
 		cursors = this.input.keyboard.createCursorKeys();
 
+
 		// interações
+		this.physics.add.overlap(player, dó, multiplicador)
+		this.physics.add.overlap(player, re, multiplicador)
+		this.physics.add.overlap(player, mi, multiplicador)
+		this.physics.add.overlap(player, fa, multiplicador)
+		this.physics.add.overlap(player, sol, multiplicador)
+		this.physics.add.overlap(player, la, multiplicador)
+
 		this.physics.add.overlap(player, dó, key_Q)
 		this.physics.add.overlap(player, re, key_W)
 		this.physics.add.overlap(player, mi, key_E)
@@ -308,7 +332,7 @@ function create() {
 		this.physics.add.overlap(player, sol, key_T)
 		this.physics.add.overlap(player, la, key_Y)
 
-	}, 7800);
+	}, 780);
 
 }
 
@@ -317,28 +341,49 @@ function update() {
 }
 
 // 
+function deletarNota(nota) {
+	nota.disableBody(true, true)
+	if (scoreMulti > 11) {
+		scoreMulti = 10
+	}
+	score += 10 * scoreMulti
+	scoreText.setText(`Score = ${score}`);
+
+	scoreMulti++
+}
+
+function multiplicador() {
+	scoreMulti >= 10 ? scoreMulti = 10 : scoreMulti
+	multiText.setText(`Multiplicador = ${scoreMulti}X`);
+}
+
 function key_Q(player, nota) {
-	key == 81 ? nota.disableBody(true, true):''
+	key == 81 ? deletarNota(nota) : scoreMulti = 1
 }
 
 function key_W(player, nota) {
-	key == 87 ? nota.disableBody(true, true) : ''
+
+	key == 87 ? deletarNota(nota) : scoreMulti = 1
 }
 
 function key_E(player, nota) {
-	key == 69 ? nota.disableBody(true, true) : ''
+
+	key == 69 ? deletarNota(nota) : scoreMulti = 1
 }
 
 function key_R(player, nota) {
-	key == 82 ? nota.disableBody(true, true) : ''
+
+	key == 82 ? deletarNota(nota) : scoreMulti = 1
 }
 
 function key_T(player, nota) {
-	key == 84 ? nota.disableBody(true, true) : ''
+
+	key == 84 ? deletarNota(nota) : scoreMulti = 1
 }
 
 function key_Y(player, nota) {
-	key == 89 ? nota.disableBody(true, true) : ''
+
+	key == 89 ? deletarNota(nota) : scoreMulti = 1
 }
 // deixa anotado isso aqui, vai que né
 // this.input.keyboard.on('keydown_Q', function () {
