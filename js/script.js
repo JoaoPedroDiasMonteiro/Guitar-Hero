@@ -1,6 +1,6 @@
 var config = {
 	type: Phaser.AUTO,
-	width: 1800,
+	width: 1200,
 	height: 600,
 	physics: {
 		default: 'Arcade',
@@ -20,6 +20,13 @@ var config = {
 
 var game = new Phaser.Game(config);
 
+let key
+document.addEventListener('keydown', function () {
+	key = event.keyCode
+})
+document.addEventListener('keyup', function () {
+	key = 0
+})
 
 function preload() {
 	this.load.image('player', 'img/player.png')
@@ -35,7 +42,6 @@ function create() {
 
 	var music = this.sound.add('littlestar');
 	music.play();
-
 
 	setTimeout(() => {
 		// sheets
@@ -136,20 +142,16 @@ function create() {
 
 		// teclas
 		cursors = this.input.keyboard.createCursorKeys();
-		// interações
-		
-		this.physics.add.overlap(player, dó, teste);
-		this.physics.add.overlap(player, sol, teste);
-		this.physics.add.overlap(player, la, teste);
-		this.physics.add.overlap(player, mi, teste);
-		this.physics.add.overlap(player, re, teste);
-		this.physics.add.overlap(player, fa, teste);
 
+		// interações
+		this.physics.add.overlap(player, dó, key_Q)
+		this.physics.add.overlap(player, re, key_W)
+		this.physics.add.overlap(player, mi, key_E)
+		this.physics.add.overlap(player, fa, key_R)
+		this.physics.add.overlap(player, sol, key_T)
+		this.physics.add.overlap(player, la, key_Y)
 
 	}, 7800);
-
-
-
 
 }
 
@@ -157,8 +159,30 @@ function update() {
 
 }
 
-function teste(player, nota) {
-	if (cursors.up.isDown) {
-		nota.disableBody(true, true);
-	}
+// 
+function key_Q(player, nota) {
+	key == 81 ? nota.disableBody(true, true):''
 }
+
+function key_W(player, nota) {
+	key == 87 ? nota.disableBody(true, true) : ''
+}
+
+function key_E(player, nota) {
+	key == 69 ? nota.disableBody(true, true) : ''
+}
+
+function key_R(player, nota) {
+	key == 82 ? nota.disableBody(true, true) : ''
+}
+
+function key_T(player, nota) {
+	key == 84 ? nota.disableBody(true, true) : ''
+}
+
+function key_Y(player, nota) {
+	key == 89 ? nota.disableBody(true, true) : ''
+}
+// deixa anotado isso aqui, vai que né
+// this.input.keyboard.on('keydown_Q', function () {
+// })
