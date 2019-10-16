@@ -19,13 +19,12 @@ var config = {
 };
 var key, scoreText
 var score = 0;
-
 var scoreMulti = 1
+
 var game = new Phaser.Game(config);
 
 document.addEventListener('keydown', function () {
 	key = event.keyCode
-
 })
 document.addEventListener('keyup', function () {
 	key = 0
@@ -42,6 +41,7 @@ function preload() {
 	this.load.image('bola', 'img/bola.png')
 	this.load.image('bolinha', 'img/bolinha.png')
 	this.load.image('bolinha1', 'img/bolinhaReta.png')
+	this.load.image('inimigo', 'img/inimigo.png')
 	this.load.audio('littlestar', 'music/littleStar.mp3')
 }
 
@@ -106,7 +106,7 @@ function create() {
 		sheets.setVelocityX(-267);
 
 		var inimigo = this.physics.add.staticGroup()
-		inimigo.create(-7.5, 300, 'player')
+		inimigo.create(300, 300, 'inimigo')
 
 		// jogador (barra preta)
 		let player = this.physics.add.image(400, 300, 'player')
@@ -119,7 +119,7 @@ function create() {
 		let la = this.physics.add.group()
 		let fa = this.physics.add.group()
 		let mi = this.physics.add.group()
-		let re = this.physics.add.group()		
+		let re = this.physics.add.group()
 
 		dó.create(1580, 268, 'bolinha1')
 		dó.create(1780, 268, 'bolinha1')
@@ -320,13 +320,6 @@ function create() {
 		cursors = this.input.keyboard.createCursorKeys();
 
 		// interações
-		this.physics.add.overlap(player, dó, multiplicador)
-		this.physics.add.overlap(player, re, multiplicador)
-		this.physics.add.overlap(player, mi, multiplicador)
-		this.physics.add.overlap(player, fa, multiplicador)
-		this.physics.add.overlap(player, sol, multiplicador)
-		this.physics.add.overlap(player, la, multiplicador)
-
 		this.physics.add.overlap(player, dó, key_Q)
 		this.physics.add.overlap(player, re, key_W)
 		this.physics.add.overlap(player, mi, key_E)
@@ -334,12 +327,12 @@ function create() {
 		this.physics.add.overlap(player, sol, key_T)
 		this.physics.add.overlap(player, la, key_Y)
 
-		this.physics.add.collider(dó, inimigo);
-		this.physics.add.collider(re, inimigo);
-		this.physics.add.collider(mi, inimigo);
-		this.physics.add.collider(fa, inimigo);
-		this.physics.add.collider(sol, inimigo);
-		this.physics.add.collider(la, inimigo);
+		this.physics.add.collider(dó, inimigo, perderStrike);
+		this.physics.add.collider(re, inimigo, perderStrike);
+		this.physics.add.collider(mi, inimigo, perderStrike);
+		this.physics.add.collider(fa, inimigo, perderStrike);
+		this.physics.add.collider(sol, inimigo, perderStrike);
+		this.physics.add.collider(la, inimigo, perderStrike);
 
 	}, 7880);
 
@@ -350,45 +343,44 @@ function update() {
 }
 
 // 
+function perderStrike(nota, inimigo) {
+	scoreMulti = 1
+	score -= 10
+	deletarNota(nota)
+}
+
 function deletarNota(nota) {
 	nota.disableBody(true, true)
-	if (scoreMulti > 11) {
+	if (scoreMulti > 10) {
 		scoreMulti = 10
 	}
 	score += 10 * scoreMulti
 	scoreText.setText(`Score = ${score}`);
-
+	multiText.setText(`Multiplicador = ${scoreMulti}X`);
 	scoreMulti++
 }
 
-function multiplicador() {
-	scoreMulti >= 10 ? scoreMulti = 10 : scoreMulti
-	multiText.setText(`Multiplicador = ${scoreMulti}X`);
-}
 
 function key_Q(player, nota) {
-	key == 81 ? deletarNota(nota) : scoreMulti = 1
+	key == 81 ? deletarNota(nota) : ''
 }
 
 function key_W(player, nota) {
-	key == 87 ? deletarNota(nota) : scoreMulti = 1
+	key == 87 ? deletarNota(nota) : ''
 }
 
 function key_E(player, nota) {
-	key == 69 ? deletarNota(nota) : scoreMulti = 1
+	key == 69 ? deletarNota(nota) : ''
 }
 
 function key_R(player, nota) {
-	key == 82 ? deletarNota(nota) : scoreMulti = 1
+	key == 82 ? deletarNota(nota) : ''
 }
 
 function key_T(player, nota) {
-	key == 84 ? deletarNota(nota) : scoreMulti = 1
+	key == 84 ? deletarNota(nota) : ''
 }
 
 function key_Y(player, nota) {
-	key == 89 ? deletarNota(nota) : scoreMulti = 1
+	key == 89 ? deletarNota(nota) : ''
 }
-// deixa anotado isso aqui, vai que né
-// this.input.keyboard.on('keydown_Q', function () {
-// })
