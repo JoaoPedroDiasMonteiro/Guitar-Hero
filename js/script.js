@@ -41,6 +41,7 @@ function preload() {
 	this.load.image('bola', 'img/bola.png')
 	this.load.image('bolinha', 'img/bolinha.png')
 	this.load.image('bolinha1', 'img/bolinhaReta.png')
+	this.load.image('inimigo', 'img/inimigo.png')
 	this.load.audio('littlestar', 'music/littleStar.mp3')
 }
 
@@ -105,7 +106,7 @@ function create() {
 		sheets.setVelocityX(-267);
 
 		var inimigo = this.physics.add.staticGroup()
-		inimigo.create(-7.5, 300, 'player')
+		inimigo.create(300, 300, 'inimigo')
 
 		// jogador (barra preta)
 		let player = this.physics.add.image(400, 300, 'player')
