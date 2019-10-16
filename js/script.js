@@ -19,13 +19,12 @@ var config = {
 };
 var key, scoreText
 var score = 0;
-
 var scoreMulti = 1
+
 var game = new Phaser.Game(config);
 
 document.addEventListener('keydown', function () {
 	key = event.keyCode
-
 })
 document.addEventListener('keyup', function () {
 	key = 0
@@ -119,7 +118,7 @@ function create() {
 		let la = this.physics.add.group()
 		let fa = this.physics.add.group()
 		let mi = this.physics.add.group()
-		let re = this.physics.add.group()		
+		let re = this.physics.add.group()
 
 		dó.create(1580, 268, 'bolinha1')
 		dó.create(1780, 268, 'bolinha1')
@@ -320,13 +319,6 @@ function create() {
 		cursors = this.input.keyboard.createCursorKeys();
 
 		// interações
-		this.physics.add.overlap(player, dó, multiplicador)
-		this.physics.add.overlap(player, re, multiplicador)
-		this.physics.add.overlap(player, mi, multiplicador)
-		this.physics.add.overlap(player, fa, multiplicador)
-		this.physics.add.overlap(player, sol, multiplicador)
-		this.physics.add.overlap(player, la, multiplicador)
-
 		this.physics.add.overlap(player, dó, key_Q)
 		this.physics.add.overlap(player, re, key_W)
 		this.physics.add.overlap(player, mi, key_E)
@@ -350,26 +342,23 @@ function update() {
 }
 
 // 
-function perderStrike(nota, inimigo){
+function perderStrike(nota, inimigo) {
 	scoreMulti = 1
-	nota.disableBody(true,true)
+	score -= 10
+	deletarNota(nota)
 }
 
 function deletarNota(nota) {
 	nota.disableBody(true, true)
-	if (scoreMulti > 11) {
+	if (scoreMulti > 10) {
 		scoreMulti = 10
 	}
 	score += 10 * scoreMulti
 	scoreText.setText(`Score = ${score}`);
-
+	multiText.setText(`Multiplicador = ${scoreMulti}X`);
 	scoreMulti++
 }
 
-function multiplicador() {
-	scoreMulti >= 10 ? scoreMulti = 10 : scoreMulti
-	multiText.setText(`Multiplicador = ${scoreMulti}X`);
-}
 
 function key_Q(player, nota) {
 	key == 81 ? deletarNota(nota) : ''
@@ -394,6 +383,3 @@ function key_T(player, nota) {
 function key_Y(player, nota) {
 	key == 89 ? deletarNota(nota) : ''
 }
-// deixa anotado isso aqui, vai que né
-// this.input.keyboard.on('keydown_Q', function () {
-// })
