@@ -17,11 +17,12 @@ var config = {
 		update: update
 	}
 };
+var key, scoreText
 var score = 0;
-var scoreText;
+
 var scoreMulti = 1
 var game = new Phaser.Game(config);
-let key
+
 document.addEventListener('keydown', function () {
 	key = event.keyCode
 
@@ -104,6 +105,9 @@ function create() {
 		// config
 		sheets.setVelocityX(-267);
 
+		var inimigo = this.physics.add.staticGroup()
+		inimigo.create(-7.5, 300, 'player')
+
 		// jogador (barra preta)
 		let player = this.physics.add.image(400, 300, 'player')
 		// config
@@ -115,7 +119,7 @@ function create() {
 		let la = this.physics.add.group()
 		let fa = this.physics.add.group()
 		let mi = this.physics.add.group()
-		let re = this.physics.add.group()
+		let re = this.physics.add.group()		
 
 		dó.create(1580, 268, 'bolinha1')
 		dó.create(1780, 268, 'bolinha1')
@@ -330,7 +334,14 @@ function create() {
 		this.physics.add.overlap(player, sol, key_T)
 		this.physics.add.overlap(player, la, key_Y)
 
-	}, 7800);
+		this.physics.add.collider(dó, inimigo);
+		this.physics.add.collider(re, inimigo);
+		this.physics.add.collider(mi, inimigo);
+		this.physics.add.collider(fa, inimigo);
+		this.physics.add.collider(sol, inimigo);
+		this.physics.add.collider(la, inimigo);
+
+	}, 7880);
 
 }
 
