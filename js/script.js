@@ -42,6 +42,8 @@ function preload() {
 	this.load.image('bolaRisco', 'img/bolaRisco.png')
 	this.load.image('bolaRiscoBranco', 'img/bolaRiscoBranca.png')
 	this.load.audio('littlestar', 'music/littleStar.mp3')
+	this.load.image('risco', 'img/risco.png')
+	
 }
 
 function create() {
@@ -121,7 +123,9 @@ function create() {
 		let re = this.physics.add.group()
 
 		dó.create(1580, 268, 'bolaRisco').setOrigin(0.5, 0.86)
+		dó.create(1580, 268, 'risco')
 		dó.create(1780, 268, 'bolaRisco').setOrigin(0.5, 0.86)
+		dó.create(1780, 268, 'risco')
 		sol.create(1980, 195, 'bolaRisco').setOrigin(0.5, 0.86)
 		sol.create(2180, 195, 'bolaRisco').setOrigin(0.5, 0.86)
 		//
@@ -137,6 +141,7 @@ function create() {
 		re.create(3980, 250, 'bolaRisco').setOrigin(0.5, 0.86)
 		re.create(4180, 250, 'bolaRisco').setOrigin(0.5, 0.86)
 		dó.create(4380, 268, 'bolaRiscoBranco').setOrigin(0.5, 0.86)
+		dó.create(4380, 268, 'risco')
 		// segunda linha
 		//
 		sol.create(4780, 195, 'bolaRisco').setOrigin(0.5, 0.86)
@@ -159,7 +164,9 @@ function create() {
 		// terceira linha
 		//
 		dó.create(7980, 268, 'bolaRisco').setOrigin(0.5, 0.86)
+		dó.create(7980, 268, 'risco')
 		dó.create(8180, 268, 'bolaRisco').setOrigin(0.5, 0.86)
+		dó.create(8180, 268, 'risco')
 		sol.create(8380, 195, 'bolaRisco').setOrigin(0.5, 0.86)
 		sol.create(8580, 195, 'bolaRisco').setOrigin(0.5, 0.86)
 		//
@@ -175,13 +182,16 @@ function create() {
 		re.create(10380, 250, 'bolaRisco').setOrigin(0.5, 0.86)
 		re.create(10580, 250, 'bolaRisco').setOrigin(0.5, 0.86)
 		dó.create(10780, 268, 'bolaRiscoBranco').setOrigin(0.5, 0.86)
+		dó.create(10780, 268, 'risco')
 
 		//
 		// part 2 vruuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuum
 		//
 
 		dó.create(12780, 268, 'bolaRisco').setOrigin(0.5, 0.86)
+		dó.create(12780, 268, 'risco')
 		dó.create(12980, 268, 'bolaRisco').setOrigin(0.5, 0.86)
+		dó.create(12980, 268, 'risco')
 		sol.create(13180, 195, 'bolaRisco').setOrigin(0.5, 0.86)
 		sol.create(13380, 195, 'bolaRisco').setOrigin(0.5, 0.86)
 		//
@@ -197,6 +207,7 @@ function create() {
 		re.create(15180, 250, 'bolaRisco').setOrigin(0.5, 0.86)
 		re.create(15380, 250, 'bolaRisco').setOrigin(0.5, 0.86)
 		dó.create(15580, 268, 'bolaRiscoBranco').setOrigin(0.5, 0.86)
+		dó.create(15580, 268, 'risco')
 		// segunda linha
 		//
 		sol.create(15980, 195, 'bolaRisco').setOrigin(0.5, 0.86)
@@ -219,7 +230,9 @@ function create() {
 		// terceira linha
 		//
 		dó.create(19180, 268, 'bolaRisco').setOrigin(0.5, 0.86)
+		dó.create(19180, 268, 'risco')
 		dó.create(19380, 268, 'bolaRisco').setOrigin(0.5, 0.86)
+		dó.create(19380, 268, 'risco')
 		sol.create(19580, 195, 'bolaRisco').setOrigin(0.5, 0.86)
 		sol.create(19780, 195, 'bolaRisco').setOrigin(0.5, 0.86)
 		//
@@ -235,13 +248,16 @@ function create() {
 		re.create(21580, 250, 'bolaRisco').setOrigin(0.5, 0.86)
 		re.create(21780, 250, 'bolaRisco').setOrigin(0.5, 0.86)
 		dó.create(21980, 268, 'bolaRiscoBranco').setOrigin(0.5, 0.86)
+		dó.create(21980, 268, 'risco')
 
 		// 
 		// part 3 vruuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuum
 		//
 		fim += 2000
-		dó.create(fim, 268, 'bolaRisco').setOrigin(0.5, 0.86), fim += 200
-		dó.create(fim, 268, 'bolaRisco').setOrigin(0.5, 0.86), fim += 200
+		dó.create(fim, 268, 'bolaRisco').setOrigin(0.5, 0.86)
+		dó.create(fim, 268, 'risco'), fim += 200
+		dó.create(fim, 268, 'bolaRisco').setOrigin(0.5, 0.86)
+		dó.create(fim, 268, 'risco'), fim += 200
 		sol.create(fim, 195, 'bolaRisco').setOrigin(0.5, 0.86), fim += 200
 		sol.create(fim, 195, 'bolaRisco').setOrigin(0.5, 0.86), fim += 200
 		//
@@ -256,7 +272,8 @@ function create() {
 		//
 		re.create(fim, 250, 'bolaRisco').setOrigin(0.5, 0.86), fim += 200
 		re.create(fim, 250, 'bolaRisco').setOrigin(0.5, 0.86), fim += 200
-		dó.create(fim, 268, 'bolaRiscoBranco').setOrigin(0.5, 0.86), fim += 400
+		dó.create(fim, 268, 'bolaRiscoBranco').setOrigin(0.5, 0.86)
+		dó.create(fim, 268, 'risco'), fim += 400
 		// segunda linha
 		//
 		sol.create(fim, 195, 'bolaRisco').setOrigin(0.5, 0.86), fim += 200
@@ -278,8 +295,10 @@ function create() {
 		re.create(fim, 250, 'bolaRiscoBranco').setOrigin(0.5, 0.86), fim += 400
 		// terceira linha
 		//
-		dó.create(fim, 268, 'bolaRisco').setOrigin(0.5, 0.86), fim += 200
-		dó.create(fim, 268, 'bolaRisco').setOrigin(0.5, 0.86), fim += 200
+		dó.create(fim, 268, 'bolaRisco').setOrigin(0.5, 0.86)
+		dó.create(fim, 268, 'risco'), fim += 200
+		dó.create(fim, 268, 'bolaRisco').setOrigin(0.5, 0.86)
+		dó.create(fim, 268, 'risco'), fim += 200
 		sol.create(fim, 195, 'bolaRisco').setOrigin(0.5, 0.86), fim += 200
 		sol.create(fim, 195, 'bolaRisco').setOrigin(0.5, 0.86), fim += 200
 		//
@@ -294,7 +313,8 @@ function create() {
 		//
 		re.create(fim, 250, 'bolaRisco').setOrigin(0.5, 0.86), fim += 300
 		re.create(fim, 250, 'bolaRisco').setOrigin(0.5, 0.86), fim += 300
-		dó.create(fim, 268, 'bolaRiscoBranco').setOrigin(0.5, 0.86), fim += 400
+		dó.create(fim, 268, 'bolaRiscoBranco').setOrigin(0.5, 0.86)
+		dó.create(fim, 268, 'risco'), fim += 400
 
 		//  configs
 		dó.setVelocityX(-267)
@@ -303,7 +323,6 @@ function create() {
 		fa.setVelocityX(-267)
 		mi.setVelocityX(-267)
 		re.setVelocityX(-267)
-
 
 		// pontuação
 		scoreText = this.add.text(16, 16, 'score: 0', {
