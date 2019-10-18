@@ -108,6 +108,9 @@ function create() {
 		var inimigo = this.physics.add.staticGroup()
 		inimigo.create(333, 300, 'inimigo')
 
+		var deletador = this.physics.add.staticGroup()
+		deletador.create(-75, 300, 'inimigo')
+
 		// jogador (barra preta)
 		let player = this.physics.add.image(400, 300, 'player')
 		// config
@@ -351,6 +354,13 @@ function create() {
 		this.physics.add.overlap(sol, inimigo, perderStrike);
 		this.physics.add.overlap(la, inimigo, perderStrike);
 
+		this.physics.add.collider(deletador, dó, deletarNota)
+		this.physics.add.collider(deletador, re, deletarNota)
+		this.physics.add.collider(deletador, mi, deletarNota)
+		this.physics.add.collider(deletador, fa, deletarNota)
+		this.physics.add.collider(deletador, sol, deletarNota)
+		this.physics.add.collider(deletador, la, deletarNota)
+
 	}, 7880);
 
 }
@@ -381,6 +391,11 @@ function hitNote(nota) {
 	// nota.disableBody(true, true)	
 }
 
+function deletarNota(deletador, nota) {
+	nota.destroy()
+	console.log('nota destruída');
+	
+}
 
 function key_Q(player, nota) {
 	key == 81 ? hitNote(nota) : ''
