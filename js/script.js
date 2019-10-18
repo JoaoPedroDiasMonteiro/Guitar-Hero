@@ -43,7 +43,6 @@ function preload() {
 	this.load.image('bolaRiscoBranco', 'img/bolaRiscoBranca.png')
 	this.load.audio('littlestar', 'music/littleStar.mp3')
 	this.load.image('risco', 'img/risco.png')
-	
 }
 
 function create() {
@@ -107,7 +106,10 @@ function create() {
 		sheets.setVelocityX(-267);
 
 		var inimigo = this.physics.add.staticGroup()
-		inimigo.create(300, 300, 'inimigo')
+		inimigo.create(333, 300, 'inimigo')
+
+		var deletador = this.physics.add.staticGroup()
+		deletador.create(-75, 300, 'inimigo')
 
 		// jogador (barra preta)
 		let player = this.physics.add.image(400, 300, 'player')
@@ -345,12 +347,19 @@ function create() {
 		this.physics.add.overlap(player, sol, key_T)
 		this.physics.add.overlap(player, la, key_Y)
 
-		this.physics.add.collider(dó, inimigo, perderStrike);
-		this.physics.add.collider(re, inimigo, perderStrike);
-		this.physics.add.collider(mi, inimigo, perderStrike);
-		this.physics.add.collider(fa, inimigo, perderStrike);
-		this.physics.add.collider(sol, inimigo, perderStrike);
-		this.physics.add.collider(la, inimigo, perderStrike);
+		this.physics.add.overlap(dó, inimigo, perderStrike);
+		this.physics.add.overlap(re, inimigo, perderStrike);
+		this.physics.add.overlap(mi, inimigo, perderStrike);
+		this.physics.add.overlap(fa, inimigo, perderStrike);
+		this.physics.add.overlap(sol, inimigo, perderStrike);
+		this.physics.add.overlap(la, inimigo, perderStrike);
+
+		this.physics.add.collider(deletador, dó, deletarNota)
+		this.physics.add.collider(deletador, re, deletarNota)
+		this.physics.add.collider(deletador, mi, deletarNota)
+		this.physics.add.collider(deletador, fa, deletarNota)
+		this.physics.add.collider(deletador, sol, deletarNota)
+		this.physics.add.collider(deletador, la, deletarNota)
 
 	}, 7880);
 
@@ -362,43 +371,52 @@ function update() {
 
 // 
 function perderStrike(nota, inimigo) {
-	scoreMulti = 1
-	score -= 10
-	deletarNota(nota)
-}
-
-function deletarNota(nota) {
-	nota.disableBody(true, true)
-	if (scoreMulti > 10) {
-		scoreMulti = 10
+	if (nota.acertou != true) {
+		nota.setTintFill(0xFF2D00);
+		scoreMulti = 1
+		multiText.setText(`Multiplicador = ${scoreMulti}X`);
 	}
-	score += 10 * scoreMulti
-	scoreText.setText(`Score = ${score}`);
-	multiText.setText(`Multiplicador = ${scoreMulti}X`);
-	scoreMulti++
 }
 
+function hitNote(nota) {
+	if (nota.acertou != true) {
+		scoreMulti++
+		scoreMulti > 10 ? scoreMulti = 10 : ''
+		score += 100 * scoreMulti
+		scoreText.setText(`Score = ${score}`);
+		multiText.setText(`Multiplicador = ${scoreMulti}X`);
+		nota.setTintFill(0x59FF00);
+	}
+	nota.acertou = true
+	// nota.disableBody(true, true)	
+}
+
+function deletarNota(deletador, nota) {
+	nota.destroy()
+	console.log('nota destruída');
+	
+}
 
 function key_Q(player, nota) {
-	key == 81 ? deletarNota(nota) : ''
+	key == 81 ? hitNote(nota) : ''
 }
 
 function key_W(player, nota) {
-	key == 87 ? deletarNota(nota) : ''
+	key == 87 ? hitNote(nota) : ''
 }
 
 function key_E(player, nota) {
-	key == 69 ? deletarNota(nota) : ''
+	key == 69 ? hitNote(nota) : ''
 }
 
 function key_R(player, nota) {
-	key == 82 ? deletarNota(nota) : ''
+	key == 82 ? hitNote(nota) : ''
 }
 
 function key_T(player, nota) {
-	key == 84 ? deletarNota(nota) : ''
+	key == 84 ? hitNote(nota) : ''
 }
 
 function key_Y(player, nota) {
-	key == 89 ? deletarNota(nota) : ''
+	key == 89 ? hitNote(nota) : ''
 }
