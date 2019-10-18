@@ -106,7 +106,7 @@ function create() {
 		sheets.setVelocityX(-267);
 
 		var inimigo = this.physics.add.staticGroup()
-		inimigo.create(300, 300, 'inimigo')
+		inimigo.create(333, 300, 'inimigo')
 
 		// jogador (barra preta)
 		let player = this.physics.add.image(400, 300, 'player')
