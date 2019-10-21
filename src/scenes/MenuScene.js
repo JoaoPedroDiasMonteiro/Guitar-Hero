@@ -69,8 +69,6 @@ export class MenuScene extends Phaser.Scene {
         // mouse click up
         optionsButton.on('pointerup', () => {
             optionsButton.y = 500
-            backgroundMusic.stop()
-            this.scene.start(CST.SCENES.PLAY)
         })
 
     } // < --  create
