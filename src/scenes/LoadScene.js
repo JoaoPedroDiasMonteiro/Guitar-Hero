@@ -10,15 +10,15 @@ export class LoadScene extends Phaser.Scene {
     }
     init() {}
     preload() {
-        // this.load.image('player', './assets/image/player.png')
-        // this.load.image('sheet1', './assets/image/sheetinicio.png')
-        // this.load.image('sheet2', './assets/image/sheetpadrao.png')
-        // this.load.image('inimigo', './assets/image/inimigo.png')
-        // this.load.image('bolaRisco', './assets/image/bolaRisco.png')
-        // this.load.image('bolaRiscoBranco', './assets/image/bolaRiscoBranca.png')
-        // this.load.image('risco', './assets/image/risco.png')
+        this.load.image('player', './assets/image/player.png')
+        this.load.image('sheet1', './assets/image/sheetinicio.png')
+        this.load.image('sheet2', './assets/image/sheetpadrao.png')
+        this.load.image('inimigo', './assets/image/inimigo.png')
+        this.load.image('bolaRisco', './assets/image/bolaRisco.png')
+        this.load.image('bolaRiscoBranco', './assets/image/bolaRiscoBranca.png')
+        this.load.image('risco', './assets/image/risco.png')
 
-        this.load.image('play', '../assets/image/play_button.png')
+        this.load.image('play', './assets/image/play_button.png')
         this.load.image('options', './assets/image/options_button.png')
 
 
@@ -34,7 +34,6 @@ export class LoadScene extends Phaser.Scene {
 
         this.load.on('progress', (percent) => {
             loadingBar.fillRect(0, this.game.renderer.height / 2, this.game.renderer.width * percent, 50)
-            console.log(percent);
         })
 
         this.load.on('complete', () => {
