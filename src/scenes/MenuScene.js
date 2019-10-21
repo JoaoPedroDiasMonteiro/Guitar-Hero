@@ -13,7 +13,6 @@ export class MenuScene extends Phaser.Scene {
         let a = 2
 
         // bg music
-        this.add.image(600, 500, 'options')
         let backgroundMusic = this.sound.add('title_music');
         backgroundMusic.play()
         this.sound.pauseOnBlur = false;
@@ -46,5 +45,34 @@ export class MenuScene extends Phaser.Scene {
             backgroundMusic.stop()
             this.scene.start(CST.SCENES.PLAY)
         })
-    }
+
+        // option button
+        let optionsButton = this.add.image(600, 500, 'options')
+        optionsButton.setInteractive()
+        // mouse em cima
+        optionsButton.on('pointerover', () => {
+            a % 2 != 0 ? optionsButton.x = 610 : optionsButton.x = 590
+            a++
+            setTimeout(() => {
+                optionsButton.x = 600
+            }, 150);
+        })
+        // mouse fora
+        optionsButton.on('pointerout', () => {
+            optionsButton.x = 600
+            optionsButton.y = 500
+        })
+        // mouse click down
+        optionsButton.on('pointerdown', () => {
+            optionsButton.y = 505
+        })
+        // mouse click up
+        optionsButton.on('pointerup', () => {
+            optionsButton.y = 500
+            backgroundMusic.stop()
+            this.scene.start(CST.SCENES.PLAY)
+        })
+
+    } // < --  create
+     
 }
