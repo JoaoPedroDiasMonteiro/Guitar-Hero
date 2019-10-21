@@ -15,7 +15,9 @@
     "gh-pages": "^2.1.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -26,5 +28,5 @@
   "bugs": {
     "url": "https://github.com/JoaoPedroDiasMonteiro/Guitar-Hero/issues"
   },
-  "homepage": "https://github.com/JoaoPedroDiasMonteiro/Guitar-Hero#readme"
+  "homepage": "https://joaopedrodiasmonteiro.github.io/Guitar-Hero"
 }
