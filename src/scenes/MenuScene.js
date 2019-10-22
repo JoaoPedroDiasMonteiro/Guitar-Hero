@@ -72,6 +72,28 @@ export class MenuScene extends Phaser.Scene {
             this.scene.start(CST.SCENES.OPTIONS)
         })
 
-    } // < --  create
-     
+    } // < --  create 
+}
+export function MenuitemAnimation(img, x, y, a=2) {
+    img.setInteractive()
+    img.on('pointerover', () => {
+        a % 2 != 0 ? img.x = x + 10 : img.x = x - 10
+        a++
+        setTimeout(() => {
+            img.x = x
+        }, 150);
+    })
+    // mouse fora
+    img.on('pointerout', () => {
+        img.x = x
+        img.y = y
+    })
+    // mouse click down
+    img.on('pointerdown', () => {
+        img.y = y + 5
+    })
+    // mouse click up
+    img.on('pointerup', () => {
+        img.y = y
+    })
 }
