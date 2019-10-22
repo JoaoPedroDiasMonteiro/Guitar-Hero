@@ -12,6 +12,9 @@ if (AAconfig == 'true') { AAconfig = false } else if (AAconfig == 'false') { AAc
 let game = new Phaser.Game({
     width: 1200,
     height: 600,
+    scale: {
+        // mode: Phaser.Scale.WIDTH_CONTROLS_HEIGHT,
+    },
     physics: {
         default: 'Arcade',
         arcade: {
