@@ -20,6 +20,10 @@ export class LoadScene extends Phaser.Scene {
 
         this.load.image('play', './assets/image/play_button.png')
         this.load.image('options', './assets/image/options_button.png')
+        this.load.image('AA', './assets/image/AAText.png')
+        this.load.image('back', './assets/image/back.png')
+        this.load.image('true', './assets/image/true.png')
+        this.load.image('false', './assets/image/false.png')
 
 
         this.load.audio('star', "../assets/audio/littleStar.mp3")
