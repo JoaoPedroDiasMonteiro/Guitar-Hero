@@ -25,6 +25,7 @@ export class LoadScene extends Phaser.Scene {
         this.load.image('true', './assets/image/true.png')
         this.load.image('false', './assets/image/false.png')
         this.load.image('apply', './assets/image/apply.png')
+        this.load.image('fullscreen', './assets/image/fullscreen.png')
 
 
         this.load.audio('star', "../assets/audio/littleStar.mp3")
