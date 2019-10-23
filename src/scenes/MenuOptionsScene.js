@@ -24,7 +24,7 @@ export class MenuOptionsScene extends Phaser.Scene {
         let fullscreen = this.add.image(600, 100, 'fullscreen')
         MenuitemAnimation(fullscreen, 600, 100, menuSFX, menuSFX_click)
         // on click down function
-        fullscreen.on('pointerdown', () => {
+        fullscreen.on('pointerup', () => {
             var fscreen = localStorage.getItem('fscreen')
             if (fscreen == 'false') {
                 localStorage.setItem('fscreen', 'true')
@@ -50,7 +50,7 @@ export class MenuOptionsScene extends Phaser.Scene {
         let AA_Button = this.add.image(600, 300, 'AA')
         // on click up function
         MenuitemAnimation(AA_Button, 600, 300, menuSFX, menuSFX_click)
-        AA_Button.on('pointerdown', () => {
+        AA_Button.on('pointerup', () => {
             var AA = localStorage.getItem('AA')
             if (AA == 'false') {
                 localStorage.setItem('AA', 'true')
