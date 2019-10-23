@@ -7,6 +7,10 @@ export class MenuOptionsScene extends Phaser.Scene {
         })
     }
     create() {
+        var menuSFX = this.sound.add('menuSFX')
+        var menuSFX_click = this.sound.add('menuSFX_click')
+
+
         let imageFullscreen = this.add.image(600, 3000, 'true')
         if (localStorage.getItem('fscreen') == 'true') {
             imageFullscreen = this.add.image(600, 200, 'true')
@@ -18,9 +22,9 @@ export class MenuOptionsScene extends Phaser.Scene {
         }
         //
         let fullscreen = this.add.image(600, 100, 'fullscreen')
-        MenuitemAnimation(fullscreen, 600, 100)
+        MenuitemAnimation(fullscreen, 600, 100, menuSFX, menuSFX_click)
         // on click down function
-        fullscreen.on('pointerdown', () => {  
+        fullscreen.on('pointerdown', () => {
             var fscreen = localStorage.getItem('fscreen')
             if (fscreen == 'false') {
                 localStorage.setItem('fscreen', 'true')
@@ -45,7 +49,7 @@ export class MenuOptionsScene extends Phaser.Scene {
         }
         let AA_Button = this.add.image(600, 300, 'AA')
         // on click up function
-        MenuitemAnimation(AA_Button, 600, 300)
+        MenuitemAnimation(AA_Button, 600, 300, menuSFX, menuSFX_click)
         AA_Button.on('pointerdown', () => {
             var AA = localStorage.getItem('AA')
             if (AA == 'false') {
@@ -61,15 +65,14 @@ export class MenuOptionsScene extends Phaser.Scene {
 
 
         let back_button = this.add.image(1050, 520, 'back')
-        MenuitemAnimation(back_button, 1050, 520)
+        MenuitemAnimation(back_button, 1050, 520, menuSFX, menuSFX_click)
         // on click up function
         back_button.on('pointerup', () => {
             this.scene.start(CST.SCENES.MENU)
-            this.sound.stopAll()
         })
 
         let apply_button = this.add.image(150, 520, 'apply')
-        MenuitemAnimation(apply_button, 150, 520)
+        MenuitemAnimation(apply_button, 150, 520, menuSFX, menuSFX_click)
         apply_button.on('pointerup', () => {
             location.reload()
         })

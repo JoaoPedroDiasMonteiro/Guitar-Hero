@@ -8,7 +8,7 @@ export class LoadScene extends Phaser.Scene {
             key: CST.SCENES.LOAD
         })
     }
-    init() {}
+    init() { }
     preload() {
         this.load.image('player', './assets/image/player.png')
         this.load.image('sheet1', './assets/image/sheetinicio.png')
@@ -30,6 +30,9 @@ export class LoadScene extends Phaser.Scene {
 
         this.load.audio('star', "../assets/audio/littleStar.mp3")
         this.load.audio("title_music", "../assets/audio/shuinvy-childhood.mp3");
+        this.load.audio('menuSFX', '../assets/audio/menuSFX_over.mp3')
+        this.load.audio('menuSFX_click', '../assets/audio/menuSFX_click.mp3')
+
 
 
         let loadingBar = this.add.graphics({
@@ -47,6 +50,10 @@ export class LoadScene extends Phaser.Scene {
         })
     }
     create() {
+        let backgroundMusic = this.sound.add('title_music');
+        backgroundMusic.play()
+        this.sound.pauseOnBlur = false;
+        backgroundMusic.loop = true
         this.scene.start(CST.SCENES.MENU, 'aaaaa')
     }
 

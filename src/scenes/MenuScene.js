@@ -13,75 +13,41 @@ export class MenuScene extends Phaser.Scene {
         let a = 2
 
         // bg music
-        let backgroundMusic = this.sound.add('title_music');
-        backgroundMusic.play()
-        this.sound.pauseOnBlur = false;
-        backgroundMusic.loop = true
 
+        // sfx
+        let menuSFX = this.sound.add('menuSFX')
+        let menuSFX2 = this.sound.add('menuSFX_click')
 
         // botão play
         let playButton = this.add.image(600, 400, 'play')
+        MenuitemAnimation(playButton, 600, 400, menuSFX, menuSFX2)
         playButton.setInteractive()
-        // mouse em cima
-        playButton.on('pointerover', () => {
-            a % 2 != 0 ? playButton.x = 610 : playButton.x = 590
-            a++
-            setTimeout(() => {
-                playButton.x = 600
-            }, 150);
-        })
-        // mouse fora
-        playButton.on('pointerout', () => {
-            playButton.x = 600
-            playButton.y = 400
-        })
-        // mouse click down
-        playButton.on('pointerdown', () => {
-            playButton.y = 405
-        })
         // mouse click up
         playButton.on('pointerup', () => {
-            playButton.y = 400
-            backgroundMusic.stop()
+            this.sound.stopAll()
             this.scene.start(CST.SCENES.PLAY)
         })
 
         // option button
         let optionsButton = this.add.image(600, 500, 'options')
-        optionsButton.setInteractive()
-        // mouse em cima
-        optionsButton.on('pointerover', () => {
-            a % 2 != 0 ? optionsButton.x = 610 : optionsButton.x = 590
-            a++
-            setTimeout(() => {
-                optionsButton.x = 600
-            }, 150);
-        })
-        // mouse fora
-        optionsButton.on('pointerout', () => {
-            optionsButton.x = 600
-            optionsButton.y = 500
-        })
-        // mouse click down
-        optionsButton.on('pointerdown', () => {
-            optionsButton.y = 505
-        })
+        MenuitemAnimation(optionsButton, 600, 500, menuSFX, menuSFX2)
         // mouse click up
         optionsButton.on('pointerup', () => {
-            optionsButton.y = 500
             this.scene.start(CST.SCENES.OPTIONS)
         })
 
     } // < --  create 
 }
-export function MenuitemAnimation(img, x, y, a=2) {
+export function MenuitemAnimation(img, x, y, soundSFX, soundSFX2, a = 2) {
     img.setInteractive()
+    // mouse em cima
     img.on('pointerover', () => {
+        soundSFX.play()
         a % 2 != 0 ? img.x = x + 10 : img.x = x - 10
         a++
         setTimeout(() => {
             img.x = x
-        }, 150);
+        }, 250);
     })
     // mouse fora
     img.on('pointerout', () => {
@@ -95,5 +61,6 @@ export function MenuitemAnimation(img, x, y, a=2) {
     // mouse click up
     img.on('pointerup', () => {
         img.y = y
+        soundSFX2.play()
     })
 }
