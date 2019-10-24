@@ -298,7 +298,7 @@ export class MusicaStar extends Phaser.Scene {
             re.setVelocityX(-267)
 
             // pontuação
-            scoreText = this.add.text(16, 16, '', {
+            scoreText = this.add.text(16, 16, 'Score = 0', {
                 fontFamily: 'pixel',
                 fontSize: '32px',
                 fill: '#000',
