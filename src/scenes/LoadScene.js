@@ -9,6 +9,7 @@ export class LoadScene extends Phaser.Scene {
     }
     init() { }
     preload() {
+        // GAMEPLAY
         this.load.image('player', require('../../assets/image/player.png'))
         this.load.image('sheet1', require('../../assets/image/sheetinicio.png'))
         this.load.image('sheet2', require('../../assets/image/sheetpadrao.png'))
@@ -16,7 +17,7 @@ export class LoadScene extends Phaser.Scene {
         this.load.image('bolaRisco', require('../../assets/image/bolaRisco.png'))
         this.load.image('bolaRiscoBranco', require('../../assets/image/bolaRiscoBranca.png'))
         this.load.image('risco', require('../../assets/image/risco.png'))
-
+        // Game Menus
         this.load.image('play', require('../../assets/image/play_button.png'))
         this.load.image('options', require('../../assets/image/options_button.png'))
         this.load.image('AA', require('../../assets/image/AAText.png'))
@@ -26,11 +27,20 @@ export class LoadScene extends Phaser.Scene {
         this.load.image('apply',require( '../../assets/image/apply.png'))
         this.load.image('fullscreen',require( '../../assets/image/fullscreen.png'))
 
-
+        // music
         this.load.audio('star',require( "../../assets/audio/littleStar.mp3"))
         this.load.audio("title_music",require( "../../assets/audio/shuinvy-childhood.mp3"))
+        // SFX
         this.load.audio('menuSFX',require( '../../assets/audio/menuSFX_over.mp3'))
         this.load.audio('menuSFX_click',require( '../../assets/audio/menuSFX_click.mp3'))
+        // SFX FAIL
+        this.load.audio('fail1',require( '../../assets/audio/SFX/Cataclysmic_Molten_Core_Sting.mp3'))
+        this.load.audio('fail2',require( '../../assets/audio/SFX/Day_of_Recon_Sting.mp3'))
+        this.load.audio('fail3',require( '../../assets/audio/SFX/Der_Kleber_Sting.mp3'))
+        this.load.audio('fail4',require( '../../assets/audio/SFX/Double_Helix_Sting.mp3'))
+        this.load.audio('fail5',require( '../../assets/audio/SFX/Earthy_Crust_Sting.mp3'))
+        this.load.audio('fail6',require( '../../assets/audio/SFX/Extinction_Level_Event_Sting.mp3'))
+        this.load.audio('fail7',require( '../../assets/audio/SFX/Galactic_Damages_Sting.mp3'))
 
 
 

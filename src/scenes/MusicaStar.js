@@ -336,10 +336,12 @@ export class MusicaStar extends Phaser.Scene {
             this.physics.add.collider(deletador, sol, deletarNota)
             this.physics.add.collider(deletador, la, deletarNota)
 
-            setInterval(() => {
+            var gameOverUpdate = setInterval(() => {
                 if (life < 1) {
                     this.scene.start(CST.SCENES.GAMEOVER)
                     this.scene.stop(CST.SCENES.PLAY)
+                    this.scene.destroy(CST.SCENES.PLAY)
+                    clearInterval(gameOverUpdate)
                 }
             }, 333);
 
