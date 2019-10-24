@@ -11,4 +11,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"../CST":"pukg","../scenes/MenuScene":"qGid"}],"HJDO":[function(require,module,exports) {
 "use strict";var e=require("./scenes/LoadScene"),r=require("./scenes/MenuScene"),a=require("./scenes/MusicaStar"),c=require("./scenes/MenuOptionsScene"),s=localStorage.getItem("AA");s="true"!=s&&"false"==s;var n=localStorage.getItem("fscreen");n="true"==n?Phaser.Scale.WIDTH_CONTROLS_HEIGHT:"";var t=new Phaser.Game({width:1200,height:600,scale:{mode:n},physics:{default:"Arcade",arcade:{gravity:{x:0},debug:!1}},scene:[e.LoadScene,r.MenuScene,c.MenuOptionsScene,a.MusicaStar],render:{pixelArt:s}});
 },{"./scenes/LoadScene":"Ycqt","./scenes/MenuScene":"qGid","./scenes/MusicaStar":"qJQe","./scenes/MenuOptionsScene":"xsFp"}]},{},["HJDO"], null)
-//# sourceMappingURL=https://joaopedrodiasmonteiro.github.io/Guitar-Hero/main.065a8624.js.map
+//# sourceMappingURL=/main.065a8624.js.map
