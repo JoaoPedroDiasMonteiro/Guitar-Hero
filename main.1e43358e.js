@@ -244,7 +244,45 @@ function MenuitemAnimation(img, x, y, soundSFX, soundSFX2) {
     soundSFX2.play();
   });
 }
-},{"../CST":"src/CST.js"}],"src/scenes/LoadScene.js":[function(require,module,exports) {
+},{"../CST":"src/CST.js"}],"assets/image/player.png":[function(require,module,exports) {
+module.exports = "/player.40b38460.png";
+},{}],"assets/image/sheetinicio.png":[function(require,module,exports) {
+module.exports = "/sheetinicio.cd4d9326.png";
+},{}],"assets/image/sheetpadrao.png":[function(require,module,exports) {
+module.exports = "/sheetpadrao.d0e3d86e.png";
+},{}],"assets/image/inimigo.png":[function(require,module,exports) {
+module.exports = "/inimigo.4353c392.png";
+},{}],"assets/image/bolaRisco.png":[function(require,module,exports) {
+module.exports = "/bolaRisco.531e30de.png";
+},{}],"assets/image/bolaRiscoBranca.png":[function(require,module,exports) {
+module.exports = "/bolaRiscoBranca.6f7eeea1.png";
+},{}],"assets/image/risco.png":[function(require,module,exports) {
+module.exports = "/risco.fd0668fe.png";
+},{}],"assets/image/play_button.png":[function(require,module,exports) {
+module.exports = "/play_button.612f9d30.png";
+},{}],"assets/image/options_button.png":[function(require,module,exports) {
+module.exports = "/options_button.d065e32d.png";
+},{}],"assets/image/AAText.png":[function(require,module,exports) {
+module.exports = "/AAText.18e68a1c.png";
+},{}],"assets/image/back.png":[function(require,module,exports) {
+module.exports = "/back.4da35efd.png";
+},{}],"assets/image/true.png":[function(require,module,exports) {
+module.exports = "/true.4be75f06.png";
+},{}],"assets/image/false.png":[function(require,module,exports) {
+module.exports = "/false.4018312d.png";
+},{}],"assets/image/apply.png":[function(require,module,exports) {
+module.exports = "/apply.c05e5125.png";
+},{}],"assets/image/fullscreen.png":[function(require,module,exports) {
+module.exports = "/fullscreen.03172721.png";
+},{}],"assets/audio/littleStar.mp3":[function(require,module,exports) {
+module.exports = "/littleStar.59809f78.mp3";
+},{}],"assets/audio/shuinvy-childhood.mp3":[function(require,module,exports) {
+module.exports = "/shuinvy-childhood.3635e4d9.mp3";
+},{}],"assets/audio/menuSFX_over.mp3":[function(require,module,exports) {
+module.exports = "/menuSFX_over.fe111a53.mp3";
+},{}],"assets/audio/menuSFX_click.mp3":[function(require,module,exports) {
+module.exports = "/menuSFX_click.9c832bae.mp3";
+},{}],"src/scenes/LoadScene.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -295,7 +333,25 @@ function (_Phaser$Scene) {
     value: function preload() {
       var _this = this;
 
-      this.load.image('player', '../apply.png');
+      this.load.image('player', require('../../assets/image/player.png'));
+      this.load.image('sheet1', require('../../assets/image/sheetinicio.png'));
+      this.load.image('sheet2', require('../../assets/image/sheetpadrao.png'));
+      this.load.image('inimigo', require('../../assets/image/inimigo.png'));
+      this.load.image('bolaRisco', require('../../assets/image/bolaRisco.png'));
+      this.load.image('bolaRiscoBranco', require('../../assets/image/bolaRiscoBranca.png'));
+      this.load.image('risco', require('../../assets/image/risco.png'));
+      this.load.image('play', require('../../assets/image/play_button.png'));
+      this.load.image('options', require('../../assets/image/options_button.png'));
+      this.load.image('AA', require('../../assets/image/AAText.png'));
+      this.load.image('back', require('../../assets/image/back.png'));
+      this.load.image('true', require('../../assets/image/true.png'));
+      this.load.image('false', require('../../assets/image/false.png'));
+      this.load.image('apply', require('../../assets/image/apply.png'));
+      this.load.image('fullscreen', require('../../assets/image/fullscreen.png'));
+      this.load.audio('star', require("../../assets/audio/littleStar.mp3"));
+      this.load.audio("title_music", require("../../assets/audio/shuinvy-childhood.mp3"));
+      this.load.audio('menuSFX', require('../../assets/audio/menuSFX_over.mp3'));
+      this.load.audio('menuSFX_click', require('../../assets/audio/menuSFX_click.mp3'));
       var loadingBar = this.add.graphics({
         fillStyle: {
           color: 0xffffff //white
@@ -323,7 +379,7 @@ function (_Phaser$Scene) {
 }(Phaser.Scene);
 
 exports.LoadScene = LoadScene;
-},{"../CST":"src/CST.js","./MenuScene":"src/scenes/MenuScene.js"}],"src/scenes/MusicaStar.js":[function(require,module,exports) {
+},{"../CST":"src/CST.js","./MenuScene":"src/scenes/MenuScene.js","../../assets/image/player.png":"assets/image/player.png","../../assets/image/sheetinicio.png":"assets/image/sheetinicio.png","../../assets/image/sheetpadrao.png":"assets/image/sheetpadrao.png","../../assets/image/inimigo.png":"assets/image/inimigo.png","../../assets/image/bolaRisco.png":"assets/image/bolaRisco.png","../../assets/image/bolaRiscoBranca.png":"assets/image/bolaRiscoBranca.png","../../assets/image/risco.png":"assets/image/risco.png","../../assets/image/play_button.png":"assets/image/play_button.png","../../assets/image/options_button.png":"assets/image/options_button.png","../../assets/image/AAText.png":"assets/image/AAText.png","../../assets/image/back.png":"assets/image/back.png","../../assets/image/true.png":"assets/image/true.png","../../assets/image/false.png":"assets/image/false.png","../../assets/image/apply.png":"assets/image/apply.png","../../assets/image/fullscreen.png":"assets/image/fullscreen.png","../../assets/audio/littleStar.mp3":"assets/audio/littleStar.mp3","../../assets/audio/shuinvy-childhood.mp3":"assets/audio/shuinvy-childhood.mp3","../../assets/audio/menuSFX_over.mp3":"assets/audio/menuSFX_over.mp3","../../assets/audio/menuSFX_click.mp3":"assets/audio/menuSFX_click.mp3"}],"src/scenes/MusicaStar.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -973,7 +1029,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62512" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51258" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
