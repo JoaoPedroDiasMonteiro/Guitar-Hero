@@ -53,7 +53,7 @@ export class LoadScene extends Phaser.Scene {
         backgroundMusic.play()
         this.sound.pauseOnBlur = false;
         backgroundMusic.loop = true
-        this.scene.start(CST.SCENES.MENU, 'aaaaa')
+        this.scene.start(CST.SCENES.MENU)
     }
 
 }

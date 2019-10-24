@@ -1,7 +1,8 @@
-var key, scoreText, multiText
-var score = 0;
+var key, scoreText, multiText, life
+export var score = 0;
 var scoreMulti = 1
 
+export var test = score
 document.addEventListener('keydown', function () {
     key = event.keyCode
 })
@@ -20,6 +21,7 @@ export class MusicaStar extends Phaser.Scene {
     preload() { }
 
     create() {
+        life = 10
         let music = this.sound.add('star');
         music.play();
         setTimeout(() => {
@@ -320,12 +322,12 @@ export class MusicaStar extends Phaser.Scene {
             this.physics.add.overlap(player, sol, key_T)
             this.physics.add.overlap(player, la, key_Y)
 
-            this.physics.add.overlap(dó, inimigo, perderStrike);
-            this.physics.add.overlap(re, inimigo, perderStrike);
-            this.physics.add.overlap(mi, inimigo, perderStrike);
-            this.physics.add.overlap(fa, inimigo, perderStrike);
-            this.physics.add.overlap(sol, inimigo, perderStrike);
-            this.physics.add.overlap(la, inimigo, perderStrike);
+            this.physics.add.overlap(dó, inimigo, hitFail);
+            this.physics.add.overlap(re, inimigo, hitFail);
+            this.physics.add.overlap(mi, inimigo, hitFail);
+            this.physics.add.overlap(fa, inimigo, hitFail);
+            this.physics.add.overlap(sol, inimigo, hitFail);
+            this.physics.add.overlap(la, inimigo, hitFail);
 
             this.physics.add.collider(deletador, dó, deletarNota)
             this.physics.add.collider(deletador, re, deletarNota)
@@ -333,18 +335,27 @@ export class MusicaStar extends Phaser.Scene {
             this.physics.add.collider(deletador, fa, deletarNota)
             this.physics.add.collider(deletador, sol, deletarNota)
             this.physics.add.collider(deletador, la, deletarNota)
-            
-        }, 7880);
-    }
-    update() { }
 
+            setInterval(() => {
+                if (life < 1) {
+                    this.scene.start(CST.SCENES.GAMEOVER)
+                    this.scene.stop(CST.SCENES.PLAY)
+                }
+            }, 333);
+
+        }, 7880);
+    } // create
+    update() { }
 }
 
-function perderStrike(nota, inimigo) {
-    if (nota.acertou != true) {
+
+function hitFail(nota, inimigo) {
+    if (nota.acertou != true && nota.tst != true) {
         nota.setTintFill(0xFF2D00);
         scoreMulti = 1
         multiText.setText(`Multiplicador = ${scoreMulti}X`);
+        life--
+        nota.tst = true
     }
 }
 
@@ -356,6 +367,8 @@ function hitNote(nota) {
         scoreText.setText(`Score = ${score}`);
         multiText.setText(`Multiplicador = ${scoreMulti}X`);
         nota.setTintFill(0x59FF00);
+        life++
+        life > 10 ? life = 10 : ''
     }
     nota.acertou = true
     // nota.disableBody(true, true)	
@@ -363,8 +376,6 @@ function hitNote(nota) {
 
 function deletarNota(deletador, nota) {
     nota.destroy()
-    console.log('nota destruída');
-
 }
 
 function key_Q(player, nota) {
