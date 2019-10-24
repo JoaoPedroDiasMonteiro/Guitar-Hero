@@ -298,11 +298,13 @@ export class MusicaStar extends Phaser.Scene {
             re.setVelocityX(-267)
 
             // pontuação
-            scoreText = this.add.text(16, 16, 'score: 0', {
+            scoreText = this.add.text(16, 16, '', {
+                fontFamily: 'pixel',
                 fontSize: '32px',
-                fill: '#000'
+                fill: '#000',
             });
-            multiText = this.add.text(16, 38, 'score: 0', {
+            multiText = this.add.text(16, 42, '', {
+                fontFamily: 'pixel',
                 fontSize: '32px',
                 fill: '#000'
             });
@@ -331,9 +333,8 @@ export class MusicaStar extends Phaser.Scene {
             this.physics.add.collider(deletador, fa, deletarNota)
             this.physics.add.collider(deletador, sol, deletarNota)
             this.physics.add.collider(deletador, la, deletarNota)
-
+            
         }, 7880);
-
     }
     update() { }
 
