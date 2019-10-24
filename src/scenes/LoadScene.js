@@ -10,28 +10,28 @@ export class LoadScene extends Phaser.Scene {
     }
     init() { }
     preload() {
-        this.load.image('player', './assets/image/player.png')
-        this.load.image('sheet1', './assets/image/sheetinicio.png')
-        this.load.image('sheet2', './assets/image/sheetpadrao.png')
-        this.load.image('inimigo', './assets/image/inimigo.png')
-        this.load.image('bolaRisco', './assets/image/bolaRisco.png')
-        this.load.image('bolaRiscoBranco', './assets/image/bolaRiscoBranca.png')
-        this.load.image('risco', './assets/image/risco.png')
+        this.load.image('player', require('../../assets/image/player.png'))
+        this.load.image('sheet1', require('../../assets/image/sheetinicio.png'))
+        this.load.image('sheet2', require('../../assets/image/sheetpadrao.png'))
+        this.load.image('inimigo', require('../../assets/image/inimigo.png'))
+        this.load.image('bolaRisco', require('../../assets/image/bolaRisco.png'))
+        this.load.image('bolaRiscoBranco', require('../../assets/image/bolaRiscoBranca.png'))
+        this.load.image('risco', require('../../assets/image/risco.png'))
 
-        this.load.image('play', './assets/image/play_button.png')
-        this.load.image('options', './assets/image/options_button.png')
-        this.load.image('AA', './assets/image/AAText.png')
-        this.load.image('back', './assets/image/back.png')
-        this.load.image('true', './assets/image/true.png')
-        this.load.image('false', './assets/image/false.png')
-        this.load.image('apply', './assets/image/apply.png')
-        this.load.image('fullscreen', './assets/image/fullscreen.png')
+        this.load.image('play', require('../../assets/image/play_button.png'))
+        this.load.image('options', require('../../assets/image/options_button.png'))
+        this.load.image('AA', require('../../assets/image/AAText.png'))
+        this.load.image('back', require('../../assets/image/back.png'))
+        this.load.image('true',require( '../../assets/image/true.png'))
+        this.load.image('false',require( '../../assets/image/false.png'))
+        this.load.image('apply',require( '../../assets/image/apply.png'))
+        this.load.image('fullscreen',require( '../../assets/image/fullscreen.png'))
 
 
-        this.load.audio('star', "../assets/audio/littleStar.mp3")
-        this.load.audio("title_music", "../assets/audio/shuinvy-childhood.mp3");
-        this.load.audio('menuSFX', '../assets/audio/menuSFX_over.mp3')
-        this.load.audio('menuSFX_click', '../assets/audio/menuSFX_click.mp3')
+        this.load.audio('star',require( "../../assets/audio/littleStar.mp3"))
+        this.load.audio("title_music",require( "../../assets/audio/shuinvy-childhood.mp3"))
+        this.load.audio('menuSFX',require( '../../assets/audio/menuSFX_over.mp3'))
+        this.load.audio('menuSFX_click',require( '../../assets/audio/menuSFX_click.mp3'))
 
 
 

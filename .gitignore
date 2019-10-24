@@ -1,6 +1,5 @@
-dist/*.js
-dist/*.map
-dist/*.html
+dist
+
 js-src
 
 .cache
