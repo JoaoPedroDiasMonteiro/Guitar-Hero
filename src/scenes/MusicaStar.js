@@ -389,26 +389,27 @@ function deletarNota(deletador, nota) {
     nota.destroy()
 }
 
+var autoPlay = localStorage.getItem('autoPlay')
 function key_Q(player, nota) {
-    key == 81 ? hitNote(nota) : ''
+    key == 81 || autoPlay == 'true'? hitNote(nota) : ''
 }
 
 function key_W(player, nota) {
-    key == 87 ? hitNote(nota) : ''
+    key == 87 || autoPlay == 'true'? hitNote(nota) : ''
 }
 
 function key_E(player, nota) {
-    key == 69 ? hitNote(nota) : ''
+    key == 69 || autoPlay == 'true'? hitNote(nota) : ''
 }
 
 function key_R(player, nota) {
-    key == 82 ? hitNote(nota) : ''
+    key == 82 || autoPlay == 'true'? hitNote(nota) : ''
 }
 
 function key_T(player, nota) {
-    key == 84 ? hitNote(nota) : ''
+    key == 84 || autoPlay == 'true'? hitNote(nota) : ''
 }
 
 function key_Y(player, nota) {
-    key == 89 ? hitNote(nota) : ''
+    key == 89 || autoPlay == 'true'? hitNote(nota) : ''
 }
