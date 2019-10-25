@@ -84,6 +84,10 @@ export class MusicaStar extends Phaser.Scene {
             var deletador = this.physics.add.staticGroup()
             deletador.create(-75, 300, 'inimigo')
 
+            var win = this.physics.add.group()
+            win.create(34780, 300, 'inimigo')
+            win.setVelocityX(-267)
+
             // jogador (barra preta)
             let player = this.physics.add.image(400, 300, 'player')
             // config
@@ -336,6 +340,11 @@ export class MusicaStar extends Phaser.Scene {
             this.physics.add.collider(deletador, sol, deletarNota)
             this.physics.add.collider(deletador, la, deletarNota)
 
+            this.physics.add.collider(win, player, () => {
+                this.scene.start(CST.SCENES.VICTORY)
+            })
+
+
             var gameOverUpdate = setInterval(() => {
                 if (life < 1) {
                     this.scene.start(CST.SCENES.GAMEOVER)
@@ -380,26 +389,27 @@ function deletarNota(deletador, nota) {
     nota.destroy()
 }
 
+var autoPlay = localStorage.getItem('autoPlay')
 function key_Q(player, nota) {
-    key == 81 ? hitNote(nota) : ''
+    key == 81 || autoPlay == 'true'? hitNote(nota) : ''
 }
 
 function key_W(player, nota) {
-    key == 87 ? hitNote(nota) : ''
+    key == 87 || autoPlay == 'true'? hitNote(nota) : ''
 }
 
 function key_E(player, nota) {
-    key == 69 ? hitNote(nota) : ''
+    key == 69 || autoPlay == 'true'? hitNote(nota) : ''
 }
 
 function key_R(player, nota) {
-    key == 82 ? hitNote(nota) : ''
+    key == 82 || autoPlay == 'true'? hitNote(nota) : ''
 }
 
 function key_T(player, nota) {
-    key == 84 ? hitNote(nota) : ''
+    key == 84 || autoPlay == 'true'? hitNote(nota) : ''
 }
 
 function key_Y(player, nota) {
-    key == 89 ? hitNote(nota) : ''
+    key == 89 || autoPlay == 'true'? hitNote(nota) : ''
 }

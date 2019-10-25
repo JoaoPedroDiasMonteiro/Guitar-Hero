@@ -5,6 +5,8 @@ import { MenuScene } from "./scenes/MenuScene";
 import { MusicaStar } from "./scenes/MusicaStar";
 import { MenuOptionsScene } from "./scenes/MenuOptionsScene";
 import { GameOverScene } from "./scenes/GameOver";
+import { VictoryScene } from "./scenes/Victory";
+
 
 
 var AAconfig = localStorage.getItem('AA')
@@ -34,7 +36,7 @@ let game = new Phaser.Game({
         }
     },
     scene: [
-        LoadScene, MenuScene, MenuOptionsScene, MusicaStar, GameOverScene
+        LoadScene, MenuScene, MenuOptionsScene, MusicaStar, GameOverScene, VictoryScene
     ],
     render: {
         pixelArt: AAconfig

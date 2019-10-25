@@ -15,7 +15,8 @@
     "gh-pages": "^2.1.1"
   },
   "scripts": {
-    "deploy":"gh-pages -d dist"
+    "deploy":"gh-pages -d dist",
+    "build-GitPages": "parcel build index.html --public-url https://joaopedrodiasmonteiro.github.io/Guitar-Hero/"
   },
   "repository": {
     "type": "git",
