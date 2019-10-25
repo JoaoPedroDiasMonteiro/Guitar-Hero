@@ -10,7 +10,11 @@ export class VictoryScene extends Phaser.Scene {
     }
     create() {
         this.sound.stopAll()
-        // SFX
+        // SFX WIN MUSIC
+        var value = Phaser.Math.Between(1, 9);
+        let failSFX = this.sound.add(`win${value}`)
+        failSFX.play()
+        // SFX MENU
         var menuSFX = this.sound.add('menuSFX')
         var menuSFX_click = this.sound.add('menuSFX_click')
         // Victory txt
@@ -45,5 +49,5 @@ export class VictoryScene extends Phaser.Scene {
                 })
             }
         }, 16);
-    }
+    } // < -- Create
 }
