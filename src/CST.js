@@ -3,6 +3,7 @@ export const CST = {
         LOAD: "LOAD",
         MENU: "MENU",
         OPTIONS: 'OPTIONS',
-        PLAY: "PLAY"
+        PLAY: "PLAY",
+        GAMEOVER: "GAMEOVER",
     }
 } 

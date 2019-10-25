@@ -4,6 +4,8 @@ import { LoadScene } from "./scenes/LoadScene";
 import { MenuScene } from "./scenes/MenuScene";
 import { MusicaStar } from "./scenes/MusicaStar";
 import { MenuOptionsScene } from "./scenes/MenuOptionsScene";
+import { GameOverScene } from "./scenes/GameOver";
+
 
 var AAconfig = localStorage.getItem('AA')
 // Se o valor de AA for igual a true desativa o PixelArt, se não ativa. Por padrão PixelArt é desativado
@@ -32,7 +34,7 @@ let game = new Phaser.Game({
         }
     },
     scene: [
-        LoadScene, MenuScene, MenuOptionsScene, MusicaStar
+        LoadScene, MenuScene, MenuOptionsScene, MusicaStar, GameOverScene
     ],
     render: {
         pixelArt: AAconfig
