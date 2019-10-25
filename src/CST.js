@@ -5,6 +5,7 @@ export const CST = {
         OPTIONS: 'OPTIONS',
         PLAY: "PLAY",
         GAMEOVER: "GAMEOVER",
-        VICTORY: 'VICTORY'
+        VICTORY: 'VICTORY',
+        LEVELSELECT: 'LEVELSELECT'
     }
 } 

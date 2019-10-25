@@ -24,8 +24,7 @@ export class MenuScene extends Phaser.Scene {
         playButton.setInteractive()
         // mouse click up
         playButton.on('pointerup', () => {
-            this.sound.stopAll()
-            this.scene.start(CST.SCENES.PLAY)
+            this.scene.start(CST.SCENES.LEVELSELECT)
         })
 
         // option button
