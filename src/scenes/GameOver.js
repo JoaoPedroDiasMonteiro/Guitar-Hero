@@ -1,7 +1,8 @@
 import { CST } from "../CST";
 import { MenuitemAnimation } from "../scenes/MenuScene"
 import { score } from "../scenes/MusicaStar"
-
+var scoreTxt
+var i = 0
 export class GameOverScene extends Phaser.Scene {
     constructor() {
         super({
@@ -26,7 +27,7 @@ export class GameOverScene extends Phaser.Scene {
                 fill: '#FFFFFF',
             }).setOrigin(0.5, 0);
             // Score
-            this.add.text(600, 300, `Score: ${score}`, {
+            scoreTxt =  this.add.text(600, 300, `Score: 0`, {
                 fontFamily: 'pixel',
                 fontSize: '50px',
                 fill: '#FFFFFF',
@@ -39,4 +40,13 @@ export class GameOverScene extends Phaser.Scene {
             })
         }, 500);
     } // < -- Create
+    update (){
+        setInterval(() => {
+            if (i <= score) {
+                scoreTxt.setText(`Score: ${i}`)
+                i+= 10
+            } 
+        }, 501);
+        
+    } // <-- update
 }
