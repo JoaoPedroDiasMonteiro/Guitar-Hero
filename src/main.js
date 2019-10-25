@@ -6,6 +6,7 @@ import { MusicaStar } from "./scenes/MusicaStar";
 import { MenuOptionsScene } from "./scenes/MenuOptionsScene";
 import { GameOverScene } from "./scenes/GameOver";
 import { VictoryScene } from "./scenes/Victory";
+import { LevelSelect } from "./scenes/SelectScene";
 
 
 
@@ -36,7 +37,7 @@ let game = new Phaser.Game({
         }
     },
     scene: [
-        LoadScene, MenuScene, MenuOptionsScene, MusicaStar, GameOverScene, VictoryScene
+        LoadScene, MenuScene, MenuOptionsScene, MusicaStar, GameOverScene, VictoryScene, LevelSelect
     ],
     render: {
         pixelArt: AAconfig
