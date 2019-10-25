@@ -25,6 +25,11 @@ export class LevelSelect extends Phaser.Scene {
             fill: '#FFFFFF',
         }).setOrigin(0.5, 0);
         MenuitemAnimation(phase1, 600, 150, menuSFX, menuSFX_click)
+        // mouse click up
+        phase1.on('pointerup', () => {
+            this.sound.stopAll()
+            this.scene.start(CST.SCENES.PLAY)
+        })
         // Phase 2 
         let phase2 = this.add.text(600, 210, '<2. Coming soon...>', {
             fontFamily: 'pixel',
