@@ -84,6 +84,10 @@ export class MusicaStar extends Phaser.Scene {
             var deletador = this.physics.add.staticGroup()
             deletador.create(-75, 300, 'inimigo')
 
+            var win = this.physics.add.group()
+            win.create(34780, 300, 'inimigo')
+            win.setVelocityX(-267)
+
             // jogador (barra preta)
             let player = this.physics.add.image(400, 300, 'player')
             // config
@@ -335,6 +339,11 @@ export class MusicaStar extends Phaser.Scene {
             this.physics.add.collider(deletador, fa, deletarNota)
             this.physics.add.collider(deletador, sol, deletarNota)
             this.physics.add.collider(deletador, la, deletarNota)
+
+            this.physics.add.collider(win, player, () => {
+                this.scene.start(CST.SCENES.VICTORY)
+            })
+
 
             var gameOverUpdate = setInterval(() => {
                 if (life < 1) {

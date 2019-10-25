@@ -1,7 +1,6 @@
 import { CST } from "../CST";
 import { MenuitemAnimation } from "../scenes/MenuScene"
-// import { score } from "../scenes/MusicaStar"
-var score = 300000
+import { score } from "../scenes/MusicaStar"
 export class VictoryScene extends Phaser.Scene {
     constructor() {
         super({
