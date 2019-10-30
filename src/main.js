@@ -24,6 +24,7 @@ if (fullscreen == 'true') {
 let game = new Phaser.Game({
     width: 1200,
     height: 600,
+    parent: 'game',
     scale: {
         mode: fullscreen,
     },
